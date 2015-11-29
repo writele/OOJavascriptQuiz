@@ -1,0 +1,95 @@
+body, html {
+background-color: #CCEB9D;
+height: 100%;
+}
+
+header {
+background-color: #739D34;
+border: #2F4E00 solid 3px;
+padding: 5px;
+}
+
+header h1 {
+font-family: Arial, sans-serif;
+font-size: 2em;
+}
+
+#container {
+display: block;
+margin: 0 auto;
+height: 100%;
+padding: 10px;
+font-family: Arial, sans-serif;
+font-size: 1em;
+}
+
+#content {
+background: white;
+border: #2F4E00 solid 3px;
+border-radius: 10px;
+padding: 5px;
+margin: 15px auto;
+}
+
+p {
+  text-align: center;
+}
+
+img, button {
+display: block;
+margin: 0 auto;
+padding: 5px;
+}
+
+button {
+margin: 5px auto;
+cursor: default;
+background-color: #4F7514;
+border: 2px solid #2F4E00;
+border-radius: 5px;
+font-size: 1em;
+font-weight: bold;
+}
+
+button:hover {
+-moz-box-shadow: 0 0 2px 2px #2F4E00;
+-webkit-box-shadow: 0 0 2px 2px #2F4E00;
+box-shadow: 0 0 2px 2px #2F4E00;
+}
+
+.choices {
+width: 100%;
+display: inline-block;
+text-align: center;
+}
+
+ul li { 
+background-color: #4F7514;
+border: 2px solid #2F4E00;
+border-radius: 5px;
+margin: 5px auto;
+padding: 5px;
+width: 35%;
+font-weight: bold;
+cursor: default;
+text-align: center;
+}
+
+ul li:hover, ul li:active {
+opacity: 0.7;
+}
+
+.correctAnswer, .wrongAnswer { 
+width: 100%;
+display: inline-block;
+text-align: center;
+padding: 5px;
+}
+
+/* HIDDEN ITEMS */
+#finished, #animal1, #animal2, #animal3, #animal4, #animal5 {
+display: none;
+}
+
+/* Color Pallet: http://paletton.com/#uid=12r0u0kllllaFw0g0qFqFg0w0aF 
+*/

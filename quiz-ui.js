@@ -3,7 +3,6 @@ $(document).on("click", ".next", quiz.nextQuestion.bind(quiz));
 $(document).on("click", "li", function() {
   $("#content").html("");
   if($(this).hasClass("correct")) {
-    self = quiz;
     quiz.showCorrectAnswer();
   }
   else {
@@ -13,4 +12,6 @@ $(document).on("click", "li", function() {
 
 
 $(document).on("click", ".showanswer", quiz.showAnswer);
+
+$(document).on("click", "#reset", quiz.reset.bind(quiz));
 

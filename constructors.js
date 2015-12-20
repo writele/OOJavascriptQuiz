@@ -1,3 +1,5 @@
+var CONTINUE_BUTTON = '<button class="next">Continue</button>';
+
 function User() {
   this.score = 0;
 }
@@ -39,6 +41,7 @@ Question.prototype = {
 
 function Quiz(intro, questions, conclusion, user){
   this.intro = intro;
+  this.intro.text = this.intro.text + CONTINUE_BUTTON;
   this.questions = questions;
   this.conclusion = conclusion;
   this.user = user;
@@ -62,12 +65,12 @@ Quiz.prototype = {
   showCorrectAnswer: function() {
     $("#content").append('<img src="' + this.questions[this.currentQuestion].image + '">' + 
    '<p>That\'s correct! ' + this.questions[this.currentQuestion].correctAnswerText + '</p>'
-   + '<button class="next">Continue</button>');
+   + CONTINUE_BUTTON);
     this.user.score++;
     this.currentQuestion++;
     },
   showWrongAnswer: function() {
-    $("#content").append('<img src="' + this.questions[this.currentQuestion].image + '">' + '<div class="wrongAnswer">Wrong answer!<button class="showanswer">Show Correct Answer</button><div class="correctInfo">' +  this.questions[this.currentQuestion].correctAnswerText + '</div></div>' + '<button class="next">Continue</button>'); 
+    $("#content").append('<img src="' + this.questions[this.currentQuestion].image + '">' + '<div class="wrongAnswer">Sorry, that\'s incorrect!<button class="showanswer">Show Correct Answer</button><div class="correctInfo">' +  this.questions[this.currentQuestion].correctAnswerText + '</div></div>' + CONTINUE_BUTTON); 
       $(".correctInfo").hide();
       this.currentQuestion++;
       },
@@ -80,6 +83,13 @@ Quiz.prototype = {
   showConclusion: function() {
     this.conclusion.showHTML();
     this.showScore();
+  },
+  reset: function() {
+    $("#content").html("");
+    this.currentQuestion = 0;
+    this.user.score = 0;
+    this.questions.forEach(function(question){question.choices=""});
+    this.start();
   }
 
 };

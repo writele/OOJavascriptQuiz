@@ -39,12 +39,12 @@ Question.prototype = {
   }
 };
 
-function Quiz(intro, questions, conclusion, user){
+function Quiz(intro, questions, conclusion){
   this.intro = intro;
   this.intro.text = this.intro.text + CONTINUE_BUTTON;
   this.questions = questions;
   this.conclusion = conclusion;
-  this.user = user;
+  this.user = new User();
   this.currentQuestion = 0;
 }
 

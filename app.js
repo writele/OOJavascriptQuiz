@@ -24,7 +24,6 @@ quizQuestions.push(question3);
 quizQuestions.push(question4);
 quizQuestions.push(question5);
 
-var user1 = new User();
-var quiz = new Quiz(intro1, quizQuestions, conclusion1, user1);
+var quiz = new Quiz(intro1, quizQuestions, conclusion1);
 
 quiz.start();
